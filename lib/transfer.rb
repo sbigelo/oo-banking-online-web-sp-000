@@ -18,11 +18,13 @@ class Transfer
       receiver.balance += amount
       self.status = "complete"
     else
-      
+      reject_transer
     end
   end
   
-  def 
+  def reject_transer
+    
+  end
   
 end
 
