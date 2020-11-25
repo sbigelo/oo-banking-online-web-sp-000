@@ -22,25 +22,25 @@ class Transfer
 end
 
 
-describe '#execute_transaction' do
-    let(:avi) { BankAccount.new("Avi") }
-    let(:amanda) { BankAccount.new("Amanda") }
-    let(:transfer) { Transfer.new(amanda, avi, 50) }
-    let(:bad_transfer) { Transfer.new(amanda, avi, 4000) }
+# describe '#execute_transaction' do
+#     let(:avi) { BankAccount.new("Avi") }
+#     let(:amanda) { BankAccount.new("Amanda") }
+#     let(:transfer) { Transfer.new(amanda, avi, 50) }
+#     let(:bad_transfer) { Transfer.new(amanda, avi, 4000) }
 
-    it "can execute a successful transaction between two accounts" do
-      transfer.execute_transaction
-      expect(amanda.balance).to eq(950)
-      expect(avi.balance).to eq(1050)
-      expect(transfer.status).to eq("complete")
-    end
+#     it "can execute a successful transaction between two accounts" do
+#       transfer.execute_transaction
+#       expect(amanda.balance).to eq(950)
+#       expect(avi.balance).to eq(1050)
+#       expect(transfer.status).to eq("complete")
+#     end
 
-    it "each transfer can only happen once" do
-      transfer.execute_transaction
-      expect(amanda.balance).to eq(950)
-      expect(avi.balance).to eq(1050)
-      expect(transfer.status).to eq("complete")
-      transfer.execute_transaction
-      expect(amanda.balance).to eq(950)
-      expect(avi.balance).to eq(1050)
-    end
+#     it "each transfer can only happen once" do
+#       transfer.execute_transaction
+#       expect(amanda.balance).to eq(950)
+#       expect(avi.balance).to eq(1050)
+#       expect(transfer.status).to eq("complete")
+#       transfer.execute_transaction
+#       expect(amanda.balance).to eq(950)
+#       expect(avi.balance).to eq(1050)
+#     end
