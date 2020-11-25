@@ -13,7 +13,7 @@ class Transfer
   end
   
   def execute_transaction
-    if valid? && receiver.valid?
+    if valid? && receiver.balance
     
     end
   end
